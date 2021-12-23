@@ -1,0 +1,6 @@
+{
+  "base_url": "https://api.clashroyale.com/v1",
+  "player_tag": "#your_tag",
+  "mail": "your_mail_@developer.clashroyale.com",
+  "password": "your_password@developer.clashroyale.com"
+}
