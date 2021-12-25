@@ -4,27 +4,108 @@ import "testing"
 
 func TestEquals(t *testing.T) {
 	type args struct {
-		v1 []string
-		v2 []string
+		v1 []Card
+		v2 []Card
 	}
 	tests := []struct {
 		name string
 		args args
 		want bool
 	}{
+		// TODO: Add test cases.
 		{
-			name: "ok",
+			name: "",
 			args: args{
-				v1: []string{"1", "2", "3", "4"},
-				v2: []string{"1", "2", "3", "4"},
+				v1: []Card{{
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}},
+				v2: []Card{{
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}},
 			},
 			want: true,
 		},
 		{
-			name: "ko",
+			name: "",
 			args: args{
-				v1: []string{"1", "2", "3", "4"},
-				v2: []string{"1", "2", "3", "5"},
+				v1: []Card{{
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}},
+				v2: []Card{{
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Hog Rider",
+				}},
+			},
+			want: false,
+		},
+		{
+			name: "",
+			args: args{
+				v1: []Card{{
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}},
+				v2: []Card{{
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 1,
+					Name:  "Valkirie",
+				}, {
+					Level: 2,
+					Name:  "Valkirie",
+				}},
 			},
 			want: false,
 		},

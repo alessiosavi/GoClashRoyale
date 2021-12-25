@@ -45,7 +45,7 @@ func main() {
 	log.Println("============= Player Info =============")
 	log.Println(helper.MarshalIndent(getPlayer))
 
-	// Retrieve the next chest that you will receive
+	//Retrieve the next chest that you will receive
 	chest, err := api.GetUpcomingChest(conf.PlayerTag, token)
 	if err != nil {
 		panic(err)
@@ -59,10 +59,12 @@ func main() {
 		panic(err)
 	}
 	log.Println("============= Battle Log =============")
-	log.Println(helper.MarshalIndent(battleLog))
+	wins := battleLog.GetWin()
+	loses := battleLog.GetLose()
 
-	// Retrieve the deck that win against you
-	lost := api.GetLost(conf.PlayerTag, token)
-	log.Println("============= Decks Lost =============")
-	log.Println(helper.MarshalIndent(lost))
+	log.Println("============= WIN =============")
+	log.Println(helper.MarshalIndent(wins))
+	log.Println("============= LOST =============")
+	log.Println(helper.MarshalIndent(loses))
+
 }
